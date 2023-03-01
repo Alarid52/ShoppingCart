@@ -1,7 +1,8 @@
 const btnCart = document.querySelector('#btn-cart');
 const iCart = document.querySelector('.btni-cart');
 const menuCart = document.querySelector('.menu-cart');
-const container = document.querySelector('.container-items')
+const container = document.querySelector('.container-items');
+
 
 let arrayItems = [];
 
@@ -27,7 +28,7 @@ const cartItems = (e) => {
         }
         menuCart.innerHTML = "";
         arrayItems.map((item) => printCart(item));
-        printTotal(arrayItems)
+        printTotal(arrayItems);
     }
     
 }
