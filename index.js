@@ -37,7 +37,7 @@ const printJewels = (item) => {
     jewelCards.innerHTML += `<div class="card">
             <img src=${item.image} alt="">
             <h3>${item.title}</h3>
-            <p>Rating: ${item.rating.rate} / 5</p><span>Stock: ${item.rating.count}</span>
+            <p>Rating: ${item.rating.rate} / 5</p>
             <h4>Price: $${item.price}</h4>
             <button class="add-cart" id="${item.id}">Add to cart</button>
         </div>`;
@@ -49,7 +49,7 @@ const printElectronics = (item) => {
     electroCards.innerHTML += `<div class="card">
             <img src=${item.image} alt="">
             <h3>${item.title}</h3>
-            <p>Rating: ${item.rating.rate} / 5</p><span>Stock: ${item.rating.count}</span>
+            <p>Rating: ${item.rating.rate} / 5</p>
             <h4>Price: $${item.price}</h4>
             <button class="add-cart" id="${item.id}">Add to cart</button>
         </div>`;
@@ -61,7 +61,7 @@ const printWomen = (item) => {
     womenCards.innerHTML += `<div class="card">
             <img src=${item.image} alt="">
             <h3>${item.title}</h3>
-            <p>Rating: ${item.rating.rate} / 5</p><span>Stock: ${item.rating.count}</span>
+            <p>Rating: ${item.rating.rate} / 5</p>
             <h4>Price: $${item.price}</h4>
             <button class="add-cart" id="${item.id}">Add to cart</button>
         </div>`;
@@ -73,13 +73,12 @@ const printMen = (item) => {
     menCards.innerHTML += `<div class="card">
             <img src=${item.image} alt="">
             <h3>${item.title}</h3>
-            <p>Rating: ${item.rating.rate} / 5</p><span>Stock: ${item.rating.count}</span>
+            <p>Rating: ${item.rating.rate} / 5</p>
             <h4>Price: $${item.price}</h4>
             <button class="add-cart" id="${item.id}">Add to cart</button>
         </div>`;
 }
 
 getItems();
-
 
 
