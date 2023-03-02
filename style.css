@@ -15,7 +15,9 @@ header {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: 1rem;
+    background-color: #381430;
 }
 
 .container-items::-webkit-scrollbar {
@@ -33,6 +35,7 @@ header {
 .nav-bar {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     width: auto;
     height: 100%;
     background-color: white;
@@ -42,8 +45,8 @@ header {
     display: flex;
     justify-items: flex-start;
     align-items: center;
-    width: 30%;
-    column-gap: 2rem;
+    width: 50%;
+    column-gap: 0rem;
 }
 
 .logo img {
@@ -52,16 +55,30 @@ header {
     height: 3rem;
 }
 
-#fake {
+.index {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5rem;
+    width: 100%;
+}
+
+.index img {
+    margin-left: 2rem;
     width: 10rem;
-    height: 2rem;
+    height: 10rem;
+}
+
+#fake-nav {
+    width: 8rem;
+    height: 1.3rem;
 }
 
 .cart {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 70%;
+    width: 50%;
     position: relative;
 }
 
@@ -80,11 +97,13 @@ header {
 }
 
 .items {
+    width: 90%;
     margin: 1rem;
     padding: 1rem;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #men {
@@ -121,8 +140,8 @@ header {
     align-items: center;
     row-gap: 2rem;
     background-color: white;
-    width: 263px;
-    height: 600px;
+    width: 245px;
+    height: 500px;
     padding: 1rem;
     border-radius: 5px;
     text-align: center;
@@ -150,17 +169,17 @@ header {
 .menu-cart {
     display: flex;
     flex-flow: row wrap;
-    width: 600px;
+    width: 450px;
     min-height: 200px;
     max-height: 550px;
     position: absolute;
-    top: 90px;
+    top: 65px;
     right: 32px;
     overflow-y: scroll;
     border-radius: 5px;
     visibility: hidden;
     background-color: white;
-    border: 1px solid gray;
+    border: 1px solid rgb(153, 153, 153);
 }
 
 .row {
@@ -170,13 +189,14 @@ header {
     flex-flow: column wrap;
     width: 100%;
     height: 200px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(153, 153, 153);
     background-color: white;
 }
 
 .row img {
-    width: 25%;
-    height: 80%;
+    width: 30%;
+    height: 70%;
+    margin-left: 1rem;
 }
 
 .total-price {
@@ -211,7 +231,7 @@ header {
     flex-direction: column;
     padding-top: 0;
     row-gap: 1rem;
-    height: 50%;
+    height: 70%;
     width: 60%;
 }
 
@@ -222,23 +242,12 @@ header {
     flex-direction: row;
     text-align: center;
     column-gap: 1rem;
-    height: 50%;
+    height: 30%;
     width: 60%;
 }
 
 .cuantity button {
     margin: 0;
-}
-
-.id-item-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 10%;
-    height: 100%;
-    text-align: center;
-    row-gap: 1rem;
 }
 
 .btn-cuantity-max {

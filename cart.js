@@ -1,5 +1,6 @@
 const btnCart = document.querySelector('#btn-cart');
 const iCart = document.querySelector('.btni-cart');
+const pathCart = document.querySelector('#path');
 const menuCart = document.querySelector('.menu-cart');
 const container = document.querySelector('.container-items');
 
@@ -31,7 +32,7 @@ const createItems = (e) => {
 
 const minMaxItems = (e, arrayItems) => {
     if (e.target.classList.contains('btn-cuantity-min')) {
-        const rowItem = e.target.parentElement.parentElement.children[3].querySelector('p').textContent;
+        const rowItem = e.target.parentElement.parentElement.children[1].querySelector('h6').querySelector('span').textContent;
         arrayItems.map((item) => {
             if (item.id === rowItem) {
                 item.quantity--;
@@ -43,7 +44,7 @@ const minMaxItems = (e, arrayItems) => {
         });
     }
     if (e.target.classList.contains('btn-cuantity-max')) {
-        const rowItem = e.target.parentElement.parentElement.children[3].querySelector('p').textContent;
+        const rowItem = e.target.parentElement.parentElement.children[1].querySelector('h6').querySelector('span').textContent;
         arrayItems.map((item) => {
             if (item.id === rowItem) {
                 item.quantity++;
@@ -57,6 +58,7 @@ const printCart = (item) => {
         <img src=${item.image} alt="">
         <div class="data-item-cart">
             <h5>${item.title}</h5>
+            <h6>ID: <span>${item.id}</span></h6>
             <h4>$${(item.price * item.quantity).toFixed(2)}</h4>
         </div>
         <div class="cuantity">
@@ -65,10 +67,6 @@ const printCart = (item) => {
             <h5>${item.quantity}</h5>
             <button type="button" class="btn-cuantity-max">
                 +</button>
-        </div>
-        <div class="id-item-menu">
-            <h4>ID</h4>
-            <p>${item.id}</p>    
         </div>
     </div>`;
 }
@@ -96,7 +94,7 @@ const cartItems = (e) => {
 document.addEventListener('click', cartItems);
 
 document.addEventListener('click', (e) => {
-    if (e.target === btnCart || e.target === iCart) {
+    if (e.target === btnCart || e.target === iCart || e.target === pathCart) {
         menuCart.classList.toggle('hidden');
     }
 });         
