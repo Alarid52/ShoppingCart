@@ -51,6 +51,18 @@ const minMaxItems = (e, arrayItems) => {
             }
         });
     }
+    if (e.target.classList.contains('btn-delete')) {
+        const rowItem = e.target.parentElement.parentElement.children[1].querySelector('h6').querySelector('span').textContent;
+        arrayItems.map((item) => {
+            if (item.id === rowItem) {
+                const i = arrayItems.indexOf(item);
+                arrayItems = arrayItems.splice(i, 1);
+            }
+        });
+    }
+    if (e.target.classList.contains('btn-drop')) {
+        arrayItems.length = 0;
+    }
 }
 
 const printCart = (item) => {
@@ -62,12 +74,14 @@ const printCart = (item) => {
             <h4>$${(item.price * item.quantity).toFixed(2)}</h4>
         </div>
         <div class="cuantity">
-            <button type="button" class="btn-cuantity-min">
-                 - </button>
+            <button type="button" class="btn-cuantity-min">-</button>
             <h5>${item.quantity}</h5>
-            <button type="button" class="btn-cuantity-max">
-                +</button>
+            <button type="button" class="btn-cuantity-max">+</button>
         </div>
+        <div class="delete-item">
+            <button type="button" class="btn-delete">X</button>
+        </div>
+        
     </div>`;
 }
 
@@ -80,7 +94,8 @@ const printTotal = (arrayItems) => {
     } else {
         total = (arrayItems.map((item) => (item.quantity * item.price))).reduce((prev, next) => prev + next);
     }
-    totalPrice.innerHTML = `<h4>Total Price: $${total.toFixed(2)}</h4>`;
+    totalPrice.innerHTML = `<button type="button" class="btn-drop">Empty Cart</button>
+                            <h4>Total Price: $${total.toFixed(2)}</h4>`;
 }
 
 const cartItems = (e) => {
@@ -91,10 +106,10 @@ const cartItems = (e) => {
     printTotal(arrayItems);
 }
 
-document.addEventListener('click', cartItems);
-
 document.addEventListener('click', (e) => {
     if (e.target === btnCart || e.target === iCart || e.target === pathCart) {
         menuCart.classList.toggle('hidden');
     }
-});         
+});  
+
+document.addEventListener('click', cartItems);    
