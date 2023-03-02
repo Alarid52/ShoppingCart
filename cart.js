@@ -2,7 +2,6 @@ const btnCart = document.querySelector('#btn-cart');
 const iCart = document.querySelector('.btni-cart');
 const pathCart = document.querySelector('#path');
 const menuCart = document.querySelector('.menu-cart');
-const container = document.querySelector('.container-items');
 
 let arrayItems = [];
 
