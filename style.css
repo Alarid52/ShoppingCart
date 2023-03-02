@@ -10,7 +10,7 @@ header {
 }
 
 .container-items {
-    width:auto;
+    width: auto;
     height: 90vh;
     overflow-y: scroll;
     display: flex;
@@ -74,7 +74,7 @@ header {
     cursor: pointer;
 }
 
-#btn-cart:hover{
+#btn-cart:hover {
     background-color: #802c6e;
     color: white;
 }
@@ -127,6 +127,7 @@ header {
     border-radius: 5px;
     text-align: center;
 }
+
 .card img {
     width: 80%;
     height: 40%;
@@ -153,8 +154,8 @@ header {
     min-height: 200px;
     max-height: 550px;
     position: absolute;
-    top: 57px;
-    right: 26px;
+    top: 90px;
+    right: 32px;
     overflow-y: scroll;
     border-radius: 5px;
     visibility: hidden;
@@ -175,7 +176,7 @@ header {
 
 .row img {
     width: 25%;
-    height: 90%;
+    height: 80%;
 }
 
 .total-price {
@@ -201,7 +202,6 @@ header {
 .menu-cart::-webkit-scrollbar-thumb {
     background-color: #802c6e;
 }
-
 
 .data-item-cart {
     text-align: center;
@@ -230,46 +230,45 @@ header {
     margin: 0;
 }
 
-
-.delete-item-menu {
+.id-item-menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 10%;
     height: 100%;
+    text-align: center;
+    row-gap: 1rem;
 }
 
 .btn-cuantity-max {
-    border-radius: 50%;
+    border-radius: 100%;
     border: 2px solid green;
+    width: 35px;
+    height: 35px;
     color: green;
     cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .btn-cuantity-max:hover {
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(202, 255, 202);
 }
 
 .btn-cuantity-min:hover {
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(255, 195, 195);
 }
 
 .btn-cuantity-min {
-    border-radius: 50%;
+    border-radius: 100%;
     border: 2px solid red;
+    width: 35px;
+    height: 35px;
     color: red;
     cursor: pointer;
-}
-
-.btn-delete {
-    width: 40px;
-    height: 40px;
-}
-
-.btn-delete:hover {
-    background-color: rgb(63, 63, 63);
-    color: white;
-    border: 1px solid rgb(63, 63, 63);
+    font-size: 1rem;
+    text-align: center;
 }
 
 .hidden {

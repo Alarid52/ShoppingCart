@@ -80,5 +80,3 @@ const printMen = (item) => {
 }
 
 getItems();
-
-
