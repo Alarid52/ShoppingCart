@@ -66,34 +66,31 @@ const minMaxItems = (e, arrayItems) => {
 }
 
 const printCart = (item) => {
-    menuCart.innerHTML += `<div class="row">
-        <img src=${item.image} alt="">
-        <div class="data-item-cart">
-            <h5>${item.title}</h5>
-            <h6>ID: <span>${item.id}</span></h6>
-            <h4>$${(item.price * item.quantity).toFixed(2)}</h4>
-        </div>
-        <div class="cuantity">
-            <button type="button" class="btn-cuantity-min">-</button>
-            <h5>${item.quantity}</h5>
-            <button type="button" class="btn-cuantity-max">+</button>
-        </div>
-        <div class="delete-item">
-            <button type="button" class="btn-delete">X</button>
-        </div>
-        
-    </div>`;
+    menuCart.innerHTML +=  `<div class="row">
+                                <img src=${item.image} alt="">
+                                <div class="data-item-cart">
+                                    <h5>${item.title}</h5>
+                                    <h6>ID: <span>${item.id}</span></h6>
+                                    <h4>$${(item.price * item.quantity).toFixed(2)}</h4>
+                                </div>
+                                <div class="cuantity">
+                                    <button type="button" class="btn-cuantity-min">-</button>
+                                    <h5>${item.quantity}</h5>
+                                    <button type="button" class="btn-cuantity-max">+</button>
+                                </div>
+                                <div class="delete-item">
+                                    <button type="button" class="btn-delete">X</button>
+                                </div>     
+                            </div>`;
 }
 
 const printTotal = (arrayItems) => {
     menuCart.innerHTML += `<div class="total-price"></div>`;
     const totalPrice = menuCart.querySelector('.total-price');
     let total;
-    if (arrayItems.length === 0) {
-        total = 0;
-    } else {
-        total = (arrayItems.map((item) => (item.quantity * item.price))).reduce((prev, next) => prev + next);
-    }
+    (arrayItems.length === 0) ? 
+    total = 0 : 
+    total = (arrayItems.map((item) => (item.quantity * item.price))).reduce((prev, next) => prev + next);
     totalPrice.innerHTML = `<button type="button" class="btn-drop">Empty Cart</button>
                             <h4>Total Price: $${total.toFixed(2)}</h4>`;
 }
@@ -110,6 +107,6 @@ document.addEventListener('click', (e) => {
     if (e.target === btnCart || e.target === iCart || e.target === pathCart) {
         menuCart.classList.toggle('hidden');
     }
-});  
+});
 
 document.addEventListener('click', cartItems);    
