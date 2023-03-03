@@ -65,8 +65,10 @@ const minMaxItems = (e, arrayItems) => {
 }
 
 const printCart = (item) => {
-    menuCart.innerHTML +=  `<div class="row">
-                                <img src=${item.image} alt="">
+    menuCart.innerHTML += `<div class="row">
+                                <div class="img-row">   
+                                    <img src=${item.image} alt="img-item-${item.id}">
+                                </div>
                                 <div class="data-item-cart">
                                     <h5>${item.title}</h5>
                                     <h6>ID: <span>${item.id}</span></h6>
@@ -87,9 +89,9 @@ const printTotal = (arrayItems) => {
     menuCart.innerHTML += `<div class="total-price"></div>`;
     const totalPrice = menuCart.querySelector('.total-price');
     let total;
-    (arrayItems.length === 0) ? 
-    total = 0 : 
-    total = (arrayItems.map((item) => (item.quantity * item.price))).reduce((prev, next) => prev + next);
+    (arrayItems.length === 0) ?
+        total = 0 :
+        total = (arrayItems.map((item) => (item.quantity * item.price))).reduce((prev, next) => prev + next);
     totalPrice.innerHTML = `<button type="button" class="btn-drop">Empty Cart</button>
                             <h4>Total Price: $${total.toFixed(2)}</h4>`;
 }

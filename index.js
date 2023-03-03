@@ -34,7 +34,7 @@ const getItems = async () => {
 const printJewels = (item) => {
     const jewelCards = document.querySelector('#jewelry').querySelector(".cards");
     jewelCards.innerHTML += `<div class="card">
-                                <img src=${item.image} alt="">
+                                <img src=${item.image} alt="img-item-${item.id}">
                                 <h3>${item.title}</h3>
                                 <p>Rating: ${item.rating.rate} / 5</p>
                                 <h4>Price: $${item.price}</h4>
@@ -45,7 +45,7 @@ const printJewels = (item) => {
 const printElectronics = (item) => {
     const electroCards = document.querySelector('#electronics').querySelector(".cards");
     electroCards.innerHTML += `<div class="card">
-                                <img src=${item.image} alt="">
+                                <img src=${item.image} alt="img-item-${item.id}">
                                 <h3>${item.title}</h3>
                                 <p>Rating: ${item.rating.rate} / 5</p>
                                 <h4>Price: $${item.price}</h4>
@@ -56,7 +56,7 @@ const printElectronics = (item) => {
 const printWomen = (item) => {
     const womenCards = document.querySelector('#women').querySelector('.cards');
     womenCards.innerHTML += `<div class="card">
-                                <img src=${item.image} alt="">
+                                <img src=${item.image} alt="img-item-${item.id}">
                                 <h3>${item.title}</h3>
                                 <p>Rating: ${item.rating.rate} / 5</p>
                                 <h4>Price: $${item.price}</h4>
@@ -67,7 +67,7 @@ const printWomen = (item) => {
 const printMen = (item) => {
     const menCards = document.querySelector('#men').querySelector('.cards');
     menCards.innerHTML += `<div class="card">
-                                <img src=${item.image} alt="">
+                                <img src=${item.image} alt="img-item-${item.id}">
                                 <h3>${item.title}</h3>
                                 <p>Rating: ${item.rating.rate} / 5</p>
                                 <h4>Price: $${item.price}</h4>
